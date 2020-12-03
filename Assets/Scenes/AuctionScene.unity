@@ -3050,7 +3050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 0
   pauseButtonText: {fileID: 392090230}
-  hidingScreen: {fileID: 1656980805}
+  hidingScreen: {fileID: 0}
   countdownText: {fileID: 979933870}
 --- !u!114 &1875978821
 MonoBehaviour:
@@ -3558,7 +3558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
