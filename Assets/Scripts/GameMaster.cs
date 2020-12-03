@@ -90,11 +90,11 @@ public class GameMaster : MonoBehaviour
         paperArtDate.GetComponentInParent<InputField>().text == currArt.GetComponent<ObjValues>().artDate.ToString()
         ){
             roundResults.Add(countdownTimer.currentTime + " points");
-            audioSource.PlayOneShot(rightDing, 1);
+            audioSource.PlayOneShot(rightDing, 0.3F);
         } else
         {
             roundResults.Add("Incorrect/out of time");
-            audioSource.PlayOneShot(wrongBuzzer, 1);
+            audioSource.PlayOneShot(wrongBuzzer, 0.1F);
         }
 
         NextLevel();
