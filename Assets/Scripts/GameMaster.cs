@@ -22,6 +22,7 @@ public class GameMaster : MonoBehaviour
     public Text currArtNameFrag;
 
     public GameObject gameOverScreen;
+    public GameObject magnifyingGlass;
 
     AudioSource audioSource;
     public AudioClip wrongBuzzer;
@@ -105,5 +106,11 @@ public class GameMaster : MonoBehaviour
         gameOverScreen.SetActive(true);
         gameOverScreen.transform.Find("Art 1 Result").GetComponent<Text>().text += roundResults[0];
         gameOverScreen.transform.Find("Art 2 Result").GetComponent<Text>().text += roundResults[1];
+    }
+
+    public void spawnMagnifier()
+    {
+        GameObject newMag = Instantiate(magnifyingGlass);
+        newMag.transform.parent = gameObject.transform;
     }
 }
