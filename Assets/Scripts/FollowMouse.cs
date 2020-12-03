@@ -22,6 +22,8 @@ public class FollowMouse : MonoBehaviour
         this.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
 
         this.transform.localEulerAngles = new Vector3(Remap(Screen.height - mousePos.y, 0, Screen.height, -30,30),Remap(mousePos.x, 0, Screen.width, -30, 30), 0); 
+
+
         
     }
 
@@ -39,4 +41,10 @@ public class FollowMouse : MonoBehaviour
 
         return to;
     }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
+
 }
