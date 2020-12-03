@@ -9,13 +9,15 @@ public class CountdownTimer : MonoBehaviour
     public float currentTime = 0f;
     float startingTime = 180f;
     bool active;
-
+    [SerializeField] Text pauseButtonText;
+    [SerializeField] GameObject hidingScreen;
     [SerializeField] Text countdownText;
 
     // Start is called before the first frame update
     void Start()
     {
         countdownText.color = Color.white;
+        hidingScreen.SetActive(false);
     }
 
 
@@ -47,11 +49,15 @@ public class CountdownTimer : MonoBehaviour
 
     public void onPause()
     {
-        active = false;
+        if (active) {
+            active = false;
+            pauseButtonText.text = "Resume";
+            hidingScreen.SetActive(true);
+        } else {
+            active = true;
+            pauseButtonText.text = "Pause";
+            hidingScreen.SetActive(false);
+        }
     }
 
-    public void onResume()
-    {
-        active = true;
-    }
 }
