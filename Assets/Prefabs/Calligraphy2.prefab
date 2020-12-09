@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artist
-      value: Li Jing
+      value: Hua Li
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artDate
-      value: 1999
+      value: 1827
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636, type: 3}
