@@ -107,12 +107,12 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artDate
-      value: 1963
+      value: 1959
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artName
-      value: Fruits of Labor
+      value: Taste of Autumn
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
@@ -122,7 +122,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artist
-      value: Joan Annamore
+      value: Annie Joseph
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}

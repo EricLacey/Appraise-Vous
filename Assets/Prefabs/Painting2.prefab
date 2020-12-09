@@ -112,7 +112,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artName
-      value: Mount Bisque
+      value: Summit at Minestrone
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artDate
-      value: 2007
+      value: 1953
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
@@ -137,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artist
-      value: Steve DeSantos
+      value: Santoro Karlsson
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
