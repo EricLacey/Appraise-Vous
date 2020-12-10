@@ -8,12 +8,13 @@ public class selectionGrid : MonoBehaviour
     int numGridInt = 1;
     public List<Sprite> timeSprites;
     public List<Sprite> numSprites;
-    Texture[] timeTextures = new Texture[3];
-    Texture[] numTextures = new Texture[3];
+    Texture2D[] timeTextures = new Texture2D[3];
+    Texture2D[] numTextures = new Texture2D[3];
+
+    GUIStyle btnStyle = new GUIStyle(GUIStyle.none);
 
     void OnEnable()
     {
-
         for (int i = 0; i < timeSprites.Count; i++)
         {
             timeTextures[i] = textureFromSprite(timeSprites[i]);
@@ -28,8 +29,8 @@ public class selectionGrid : MonoBehaviour
 
     void OnGUI()
     {
-        timeGridInt = GUILayout.SelectionGrid(timeGridInt, timeTextures, 3);
-        numGridInt = GUILayout.SelectionGrid(numGridInt, numTextures, 3);
+        timeGridInt = GUILayout.SelectionGrid(timeGridInt, timeTextures, 3, GUIStyle.none, GUILayout.Width(100), GUILayout.Height(50));
+        numGridInt = GUILayout.SelectionGrid(numGridInt, numTextures, 3, GUIStyle.none, GUILayout.Width(100), GUILayout.Height(50));
     }
 
 

@@ -89,11 +89,8 @@ public class MainMenu : MonoBehaviour
     }
     public void GoToTitle()
     {
-        SceneManager.LoadScene("MainMenu");
+        currentState = menuStates.Title;
     }
-
-
-
     public void GoToCredits()
     {
         currentState = menuStates.Credits;
