@@ -50,7 +50,7 @@ PrefabInstance:
     - target: {fileID: 2945543967595616942, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2960476166309396194, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artist
-      value: Li Jing
+      value: Jing Hua Rodriguez
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
@@ -137,12 +137,12 @@ PrefabInstance:
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artName
-      value: Sinai
+      value: Manifold
       objectReference: {fileID: 0}
     - target: {fileID: 8989095997708455006, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636,
         type: 3}
       propertyPath: artDate
-      value: 1977
+      value: 1980
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65a2e7ce5d4e08e4d9f14d2fbf258636, type: 3}
