@@ -35,12 +35,12 @@ public class selectionGrid : MonoBehaviour
 
     void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(Screen.width/2 - 150, Screen.height/2 - 18, 900, 60));
-        numGridInt = GUILayout.SelectionGrid(numGridInt, numVals, 3, GUILayout.Width(300), GUILayout.Height(50));
+        GUILayout.BeginArea(new Rect(Screen.width/2 - Screen.width*0.123F, Screen.height/2.17F, Screen.width*0.6F, Screen.height/0.05F));
+        numGridInt = GUILayout.SelectionGrid(numGridInt, numVals, 3, GUILayout.Width(Screen.width*0.25F), GUILayout.Height(Screen.height*0.08F));
         GUILayout.EndArea();
 
-        GUILayout.BeginArea(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 80, 900, 60));
-        timeGridInt = GUILayout.SelectionGrid(timeGridInt, timeVals, 3, GUILayout.Width(300), GUILayout.Height(50));
+        GUILayout.BeginArea(new Rect(Screen.width/2 - Screen.width*0.123F, Screen.height/1.47F, Screen.width*0.6F, Screen.height/0.05F));
+        timeGridInt = GUILayout.SelectionGrid(timeGridInt, timeVals, 3, GUILayout.Width(Screen.width*0.25F), GUILayout.Height(Screen.height*0.08F));
         GUILayout.EndArea();
     }
 
