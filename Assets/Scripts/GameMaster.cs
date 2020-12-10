@@ -78,6 +78,9 @@ public class GameMaster : MonoBehaviour
             Camera.main.GetComponent<CameraMover>().StartMove();
             countdownTimer.enabled = false;
 
+            if (objNum >= 0) { gameObject.GetComponent<ArtSpawner>().DeleteOldArt(objNum); }
+            
+
             if (objNum < 3) { objNum++; }
             else { objNum = 0; };
 
