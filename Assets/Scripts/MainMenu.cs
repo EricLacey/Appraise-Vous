@@ -87,6 +87,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("AuctionScene");
     }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void GoToTitle()
     {
         currentState = menuStates.Title;

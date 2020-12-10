@@ -8,9 +8,15 @@ public class GameMaster : MonoBehaviour
 {
     int objNum = -1;
     public int roundNum = 0;
-    int maxRounds = 2;
+    int maxRounds;
 
-    List<string> roundResults = new List<string>();
+    float roundResults = 0;
+    bool strike = false;
+    bool hasFailed = false;
+    bool hasSucceded = false;
+    public GameObject goodEnd;
+    public GameObject medEnd;
+    public GameObject badEnd;
 
     CountdownTimer countdownTimer;
 
@@ -28,16 +34,20 @@ public class GameMaster : MonoBehaviour
     public AudioClip wrongBuzzer;
     public AudioClip rightDing;
 
+    public GameObject welcomeScreen;
+    public GameObject tutorialScreen;
+
     private void Awake()
     {
         countdownTimer = GetComponent<CountdownTimer>();
         audioSource = GetComponent<AudioSource>();
+        maxRounds = PlayerPrefs.GetInt("NumPieces");
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        NextLevel();
+        welcomeScreen.SetActive(true);
     }
 
     // Update is called once per frame
@@ -48,6 +58,7 @@ public class GameMaster : MonoBehaviour
 
     public void NextLevel()
     {
+        strike = false;
         roundNum++;
 
         if (currArt != null)
@@ -72,9 +83,7 @@ public class GameMaster : MonoBehaviour
 
             gameObject.GetComponent<ArtSpawner>().SpawnArt(objNum);
             currArtNameFrag.text ="Name Fragment: " + currArt.GetComponent<ObjValues>().artistPartialName.ToString();
-        }
-
-        ;
+        };
 
     }
     public void StartRound()
@@ -91,27 +100,71 @@ public class GameMaster : MonoBehaviour
         paperArtDate.GetComponentInParent<InputField>().text.ToUpper() == currArt.GetComponent<ObjValues>().artDate.ToString().ToUpper()
         )
         {
-            roundResults.Add(countdownTimer.currentTime + " points");
+            switch (PlayerPrefs.GetInt("TimePerPiece"))
+            {
+                case 2:
+                    roundResults += (countdownTimer.currentTime / (PlayerPrefs.GetInt("TimePerPiece") * 60)) * 2 * 100;
+                    break;
+                case 3:
+                    roundResults += (countdownTimer.currentTime / (PlayerPrefs.GetInt("TimePerPiece") * 60)) * 100;
+                    break;
+                case 5:
+                    roundResults += (countdownTimer.currentTime / (PlayerPrefs.GetInt("TimePerPiece") * 60)) * 0.5f * 100;
+                    break;
+                default:
+                    break;
+            }
             audioSource.PlayOneShot(rightDing, 0.2F);
-        } else
+            hasSucceded = true;
+            NextLevel();
+        } else if (!strike)
         {
-            roundResults.Add("Incorrect/out of time");
             audioSource.PlayOneShot(wrongBuzzer, 0.05F);
+            strike = true;
+        }
+        else
+        {
+            audioSource.PlayOneShot(wrongBuzzer, 0.05F);
+            hasFailed = true;
+            NextLevel();
         }
 
-        NextLevel();
+        
 
     }
     void EndGame()
     {
         gameOverScreen.SetActive(true);
-        gameOverScreen.transform.Find("Art 1 Result").GetComponent<Text>().text += roundResults[0];
-        gameOverScreen.transform.Find("Art 2 Result").GetComponent<Text>().text += roundResults[1];
+
+        if (hasFailed && hasSucceded)
+        {
+            medEnd.SetActive(true);
+        } else if (hasFailed)
+        {
+            badEnd.SetActive(true);
+        }
+        else
+        {
+            goodEnd.SetActive(true);
+        }
+        
     }
 
     public void spawnMagnifier()
     {
         GameObject newMag = Instantiate(magnifyingGlass);
         newMag.transform.parent = gameObject.transform;
+    }
+
+    public void toTutorial()
+    {
+        welcomeScreen.SetActive(false);
+        tutorialScreen.SetActive(true);
+    }
+
+    public void closeTutorial()
+    {
+        tutorialScreen.SetActive(false);
+        NextLevel();
     }
 }
