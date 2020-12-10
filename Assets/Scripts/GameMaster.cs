@@ -50,12 +50,6 @@ public class GameMaster : MonoBehaviour
         welcomeScreen.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void NextLevel()
     {
         strike = false;
@@ -134,6 +128,9 @@ public class GameMaster : MonoBehaviour
     }
     void EndGame()
     {
+        countdownTimer.currentTime = 3;
+        countdownTimer.onPause();
+
         gameOverScreen.SetActive(true);
 
         if (hasFailed && hasSucceded)
