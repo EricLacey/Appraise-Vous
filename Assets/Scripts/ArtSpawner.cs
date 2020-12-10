@@ -49,6 +49,6 @@ public class ArtSpawner : MonoBehaviour
 
     public void DeleteOldArt(int pedistalNum)
     {
-        Destroy(PedistalList[pedistalNum].transform.GetChild(0).gameObject);        
+        Destroy(PedistalList[pedistalNum].transform.GetChild(0).GetChild(0).gameObject);        
     }
 }

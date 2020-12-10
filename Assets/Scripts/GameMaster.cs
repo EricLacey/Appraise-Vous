@@ -17,6 +17,7 @@ public class GameMaster : MonoBehaviour
     public GameObject goodEnd;
     public GameObject medEnd;
     public GameObject badEnd;
+    public Text scoreText;
 
     CountdownTimer countdownTimer;
 
@@ -79,7 +80,6 @@ public class GameMaster : MonoBehaviour
             else { objNum = 0; };
 
             gameObject.GetComponent<ArtSpawner>().SpawnArt(objNum);
-            currArtNameFrag.text ="Name Fragment: " + currArt.GetComponent<ObjValues>().artistPartialName.ToString();
         };
 
     }
@@ -147,7 +147,8 @@ public class GameMaster : MonoBehaviour
         {
             goodEnd.SetActive(true);
         }
-        
+
+        scoreText.text = roundResults.ToString("0");
     }
 
     public void spawnMagnifier()
