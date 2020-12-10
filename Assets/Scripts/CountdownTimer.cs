@@ -7,17 +7,15 @@ public class CountdownTimer : MonoBehaviour
 {
 
     public float currentTime = 0f;
-    float startingTime = 180f;
+    float startingTime;
     bool active;
-    [SerializeField] Text pauseButtonText;
-    [SerializeField] GameObject hidingScreen;
     [SerializeField] Text countdownText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         countdownText.color = Color.white;
-        hidingScreen.SetActive(false);
+        startingTime = PlayerPrefs.GetInt("TimePerPiece") * 60;
     }
 
 
@@ -51,12 +49,8 @@ public class CountdownTimer : MonoBehaviour
     {
         if (active) {
             active = false;
-            pauseButtonText.text = "Resume";
-            hidingScreen.SetActive(true);
         } else {
             active = true;
-            pauseButtonText.text = "Pause";
-            hidingScreen.SetActive(false);
         }
     }
 
