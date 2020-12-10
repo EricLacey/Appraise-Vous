@@ -8,7 +8,7 @@ public class GameMaster : MonoBehaviour
 {
     int objNum = -1;
     public int roundNum = 0;
-    static int MAX_ROUNDS = 2;
+    int maxRounds = 2;
 
     List<string> roundResults = new List<string>();
 
@@ -58,7 +58,7 @@ public class GameMaster : MonoBehaviour
         }
         
   
-        if (roundNum > MAX_ROUNDS) 
+        if (roundNum > maxRounds) 
         {
             EndGame();
         }
@@ -86,10 +86,11 @@ public class GameMaster : MonoBehaviour
     public void CheckResults()
     {
         if (
-        paperArtist.GetComponentInParent<InputField>().text == currArt.GetComponent<ObjValues>().artist.ToString() &&
-        paperArtName.GetComponentInParent<InputField>().text == currArt.GetComponent<ObjValues>().artName.ToString() &&
-        paperArtDate.GetComponentInParent<InputField>().text == currArt.GetComponent<ObjValues>().artDate.ToString()
-        ){
+        paperArtist.GetComponentInParent<InputField>().text.ToUpper() == currArt.GetComponent<ObjValues>().artist.ToString().ToUpper() &&
+        paperArtName.GetComponentInParent<InputField>().text.ToUpper() == currArt.GetComponent<ObjValues>().artName.ToString().ToUpper() &&
+        paperArtDate.GetComponentInParent<InputField>().text.ToUpper() == currArt.GetComponent<ObjValues>().artDate.ToString().ToUpper()
+        )
+        {
             roundResults.Add(countdownTimer.currentTime + " points");
             audioSource.PlayOneShot(rightDing, 0.2F);
         } else
