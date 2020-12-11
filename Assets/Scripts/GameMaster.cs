@@ -49,6 +49,7 @@ public class GameMaster : MonoBehaviour
     void Start()
     {
         welcomeScreen.SetActive(true);
+        countdownTimer.onPause();
     }
 
     public void NextLevel()
