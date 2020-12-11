@@ -9,6 +9,8 @@ public class GameMaster : MonoBehaviour
     int objNum = -1;
     public int roundNum = 0;
     int maxRounds;
+    int lastVal = 0;
+    float tickVolume = 0.02f;
 
     float roundResults = 0;
     bool strike = false;
@@ -34,6 +36,7 @@ public class GameMaster : MonoBehaviour
     AudioSource audioSource;
     public AudioClip wrongBuzzer;
     public AudioClip rightDing;
+    public AudioClip tickSound;
 
     public GameObject welcomeScreen;
     public GameObject tutorialScreen;
@@ -50,6 +53,23 @@ public class GameMaster : MonoBehaviour
     {
         welcomeScreen.SetActive(true);
         countdownTimer.onPause();
+    }
+
+    void Update()
+    {
+        // check current time; with 30 seconds left on the clock a ticking sound starts, for the final 10 seconds the volume ramps
+        int currentVal = (int) countdownTimer.currentTime;
+
+        if (lastVal == 0) { lastVal = currentVal; }
+
+        if (currentVal != lastVal && currentVal <= 30 && currentVal >= 11) { audioSource.PlayOneShot(tickSound, tickVolume); }
+
+        if (currentVal != lastVal && currentVal <= 20)
+        {
+            audioSource.PlayOneShot(tickSound, tickVolume + 0.02f*(11f - countdownTimer.currentTime));
+        }
+
+        lastVal = currentVal;
     }
 
     public void NextLevel()
